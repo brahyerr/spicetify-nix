@@ -223,6 +223,19 @@ in {
           }
         '';
       };
+      text = {
+        name = "text";
+        src = officialThemes;
+        patches = {
+          "xpui.js_find_8008" = ",(\\w+=)56";
+          "xpui.js_repl_8008" = ",$\{1}32";
+        };
+        injectCss = true;
+        replaceColors = true;
+        appendName = true;
+        overwriteAssets = true;
+        sidebarConfig = true;
+      };
 
       Dreary = {
         name = "Dreary";
